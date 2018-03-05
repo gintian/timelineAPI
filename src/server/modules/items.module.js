@@ -44,7 +44,10 @@ const createitems = (insertValues) => {
             console.log('SQL error: ', error);
             reject(error);
           } else if (result.affectedRows === 1) {
-            resolve(`新增成功! items_id: ${result.insertId}`);
+            resolve({
+              message: `新增成功! items_id: ${result.insertId}`,
+              id: result.insertId
+            });
           }
           connection.release();
         });

@@ -2,6 +2,19 @@ import Joi from 'joi';
 
 export default {
   // POST /api/items
+  createitems: {
+    body: {
+      content: Joi.string().required(),
+      start: Joi.string().required(),
+      end: Joi.string(),
+      group: Joi.string(),
+      subgroup: Joi.string(),
+      className: Joi.string(),
+      title: Joi.string(),
+      type: Joi.string()
+    }
+  },
+  // POST /api/article
   createArticle: {
     body: {
       user_id: Joi.number().required(),
